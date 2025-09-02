@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TickTickBot</title>
+<link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css" rel="stylesheet">
+<link rel="stylesheet" href="/static/style.css">
+
+</head>
+<body>
+<div id="toast"></div>
+<div class="container">
+
+  <!-- 1st Column: Add Task -->
+  <div class="column" id="col1">
+    <h2>Add Task</h2>
+    <input type="text" id="taskInput" placeholder="Task Description">
+    <input type="date" id="dateInput">
+    <input type="time" id="timeInput">
+    <button id="addTaskBtn">Add Task</button>
+  </div>
+
+  <!-- 2nd Column: Task Overview -->
+  <div class="column" id="col2">
+    <h2>Overview</h2>
+    <div class="overview">
+      <div>Total: <span id="totalTasks">0</span></div>
+      <div>Completed: <span id="completedTasks">0</span></div>
+      <div>Pending: <span id="pendingTasks">0</span></div>
+    </div>
+    <div id="taskList"></div>
+    <div class="bottom-buttons">
+      <button id="undoDeleteBtn">↩️ Undo Delete</button>
+      <button id="resetBtn">🗑️ Reset All</button>
+    </div>
+  </div>
+
+  <!-- 3rd Column: Calendar -->
+  <div class="column" id="col3">
+    <h2>Calendar</h2>
+    <div id="calendar"></div>
+    <div id="calendarDetails">
+      <h4>Selected Day Tasks:</h4>
+      <div id="dayTasks"></div>
+    </div>
+  </div>
+
+  <!-- 4th Column: AI Assistant -->
+  <div class="column" id="col4">
+    <h2>AI Assistant</h2>
+    <div id="chatMessages" class="chat-box"></div>
+    <div class="chat-input-row">
+      <input type="text" id="chatInput" placeholder="Type a message">
+      <button id="sendChatBtn">Send</button>
+      <button id="clearChatBtn">Clear</button>
+    </div>
+  </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
+<script src="/static/script.js"></script>
+</body>
+</html>
+
