@@ -197,7 +197,7 @@ def parse_chat_message(message_raw: str) -> dict:
             reminder = None
 
     # Add task
-    match = re.match(r"add task (.+)", message, re.IGNORECASE)
+    match = re.match(r"add (.+)", message, re.IGNORECASE)
     if match:
         return {
             "function": "addTask",
@@ -205,7 +205,7 @@ def parse_chat_message(message_raw: str) -> dict:
         }
 
     # View tasks
-    if re.search(r"view tasks", message, re.IGNORECASE):
+    if re.search(r"view", message, re.IGNORECASE):
         return {"function": "viewTasks", "arguments": {}}
 
     # Complete task (user refers to task number shown in UI, not DB id)
@@ -223,7 +223,7 @@ def parse_chat_message(message_raw: str) -> dict:
         return {"function": "undoDelete", "arguments": {}}
 
     # Reset all
-    if re.search(r"reset tasks", message, re.IGNORECASE):
+    if re.search(r"reset task", message, re.IGNORECASE):
         return {"function": "resetAll", "arguments": {}}
 
     return {"function": None, "reply": "I can help with 'add task', 'view tasks', 'complete task', 'delete task', 'undo delete', 'reset tasks'."}
