@@ -1,0 +1,132 @@
+📝 TickTickBot
+
+An interactive task management system with an integrated AI Assistant.
+Features include task creation, completion, deletion, undo, reset, and calendar visualization.
+
+🚀 Features
+
+Add Tasks with description, date, and time.
+
+Overview Dashboard showing total, completed, and pending tasks.
+
+Calendar Integration to visualize tasks by date.
+
+AI Assistant (TickTickBot) for natural language commands:
+
+"add task meeting tomorrow 3pm"
+
+"complete task grocery shopping"
+
+"delete task project work"
+
+"undo last delete"
+
+Undo Delete & Reset All functionality.
+
+Persistent API Backend powered by Flask.
+
+📂 Project Structure
+TickTickBot/
+│── main.py              # Flask backend (API + AI Assistant)
+│── templates/
+│   └── index.html       # Main frontend layout
+│── static/
+│   ├── style.css        # Styling
+│   └── script.js        # Frontend logic (fetch API + UI updates)
+│── README.md            # Documentation
+
+⚙️ Installation & Setup
+1. Clone Repository
+git clone https://github.com/your-username/TickTickBot.git
+cd TickTickBot
+
+2. Create Virtual Environment
+python -m venv venv
+source venv/bin/activate   # macOS/Linux
+venv\Scripts\activate      # Windows
+
+3. Install Dependencies
+pip install flask
+
+4. Run Flask Server
+python main.py
+
+
+The server will start on:
+👉 http://127.0.0.1:5000/
+
+🖥️ Usage
+
+Open browser and go to http://127.0.0.1:5000/
+
+Use the first column to add tasks manually.
+
+Check overview in the second column.
+
+Use the calendar to view tasks by day.
+
+Chat with AI Assistant in the fourth column using natural commands.
+
+🛠️ API Endpoints
+POST /chat
+
+Handles AI Assistant commands.
+Request:
+
+{ "message": "add task buy milk tomorrow at 9am" }
+
+
+Response:
+
+{ "reply": "Task 'buy milk' added for tomorrow at 09:00." }
+
+GET /tasks
+
+Fetches all tasks.
+
+POST /tasks
+
+Adds a new task.
+
+PUT /tasks/<id>/complete
+
+Marks a task complete/incomplete.
+
+DELETE /tasks/<id>
+
+Deletes a task.
+
+POST /tasks/undo
+
+Restores the last deleted task.
+
+📸 UI Layout
+
+Column 1 → Add Task
+
+Column 2 → Task Overview + Undo/Delete
+
+Column 3 → Calendar with clickable days
+
+Column 4 → AI Assistant (Chatbot)
+
+🎯 Grading Alignment
+
+✅ REST API design
+✅ CRUD implementation
+✅ AI chatbot integration
+✅ Frontend-backend communication
+✅ Undo + Reset functionality
+✅ Calendar + Overview sync
+
+🔮 Future Enhancements
+
+Task categories & priorities
+
+AI Assistant with smarter NLP
+
+User authentication & cloud sync
+
+Dark mode UI
+
+Would you like me to also add screenshots placeholders (like docs/screenshots/ui.png) in the README so it looks more professional?
